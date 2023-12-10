@@ -2,8 +2,7 @@
 
 Welcome to **LethalTemplate**, a BepInEx 5 plugin template for [Lethal Company](https://store.steampowered.com/app/1966720/Lethal_Company/)!
 
-This template is aimed towards [Rider](https://www.jetbrains.com/rider/) users, [although you can still use this template w/o Rider](#usage-outside-of-rider).
-
+---
 This template doesn't provide much, below you can see the things provided out of the box:
 
 - [NStrip](https://github.com/bbepis/NStrip)'ed DLLs under the `libs` directory. 
@@ -40,9 +39,9 @@ Finally, visit the [BepInEx](https://docs.bepinex.dev/articles/dev_guide/plugin_
 **🎊 Happy hacking! 🎊**
 
 ---
-### Usage Outside Of Rider
+### Usage
 
-Two configurations are provided for Rider, `Build` and `Run`.
+Two configurations are provided, `Build` and `Run`.
 
 `Build`:
 ```powershell
