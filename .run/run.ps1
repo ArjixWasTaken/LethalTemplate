@@ -4,12 +4,12 @@
 $gameName = "Lethal Company"
 $gameRoot = "C:\Games\$gameName"
 $pluginsRoot = "${gameRoot}\BepInEx\plugins"
-$ErrorActionPreference = "Stop"
-
-$projectName = [System.IO.Path]::GetFileNameWithoutExtension(
-    @(Get-ChildItem -Filter "*.csproj")[0].Name
-)
 ##### </Config>
+
+#### <Init>
+$ErrorActionPreference = "Stop"
+$projectName = [System.IO.Path]::GetFileNameWithoutExtension(@(Get-ChildItem -Filter "*.csproj")[0].Name)
+#### </Init>
 
 ##### <BeforeBuild>
 $process = Get-Process -Name "$gameName" -ErrorAction SilentlyContinue

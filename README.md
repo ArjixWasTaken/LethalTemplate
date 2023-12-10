@@ -24,7 +24,20 @@ Get-ChildItem | Where {$_.Name -Match 'LethalTemplate'} | Rename-Item -NewName {
 Get-ChildItem -File -Recurse | Where {$_.FullName -notlike "*\.git\*" -and $_.FullName -notlike "*\bin\*" -and $_.FullName -notlike "*\obj\*" -and $_.Name -notlike "*.dll"} | ForEach { (Get-Content -Path $_.FullName -Raw) -replace 'LethalTemplate',$newName | Out-File -FilePath $_.FullName }
 ```
 
-And voila!
+Furthermore, you need to modify `.run/run.ps1` so it knows where the game files are. </br>
+Look for the `Config` section, mine is 
+```powershell
+##### <Config>
+$gameName = "Lethal Company"
+$gameRoot = "C:\Games\$gameName"
+$pluginsRoot = "${gameRoot}\BepInEx\plugins"
+##### </Config>
+```
+You will most likely only have to edit `$gameRoot`, as the other values won't change.
+
+Finally, visit the [BepInEx](https://docs.bepinex.dev/articles/dev_guide/plugin_tutorial/3_logging.html) and [HarmonyX](https://github.com/BepInEx/HarmonyX/wiki) docs to learn the next steps!
+
+**🎊 Happy hacking! 🎊**
 
 ---
 ### Usage Outside Of Rider
