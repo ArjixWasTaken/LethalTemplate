@@ -11,6 +11,20 @@ This template doesn't provide much, below you can see the things provided out of
 - - Building the plugin and copying it to the game directory.
 - - Building the plugin and running the game with it.
 
+## Getting started
+
+First of all, have you decided on a plugin name? </br>
+Of course you have!
+
+Run the following commands (in the root of the repository) to make this template use your name!
+```powershell
+$newName = "ExamplePluginName"
+
+Get-ChildItem | Where {$_.Name -Match 'LethalTemplate'} | Rename-Item -NewName {$_.name -replace 'LethalTemplate', $newName }
+Get-ChildItem -File -Recurse | Where {$_.FullName -notlike "*\.git\*" -and $_.FullName -notlike "*\bin\*" -and $_.FullName -notlike "*\obj\*" -and $_.Name -notlike "*.dll"} | ForEach { (Get-Content -Path $_.FullName -Raw) -replace 'LethalTemplate',$newName | Out-File -FilePath $_.FullName }
+```
+
+And voila!
 
 ---
 ### Usage Outside Of Rider
