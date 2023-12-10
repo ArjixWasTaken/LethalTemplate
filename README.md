@@ -45,11 +45,11 @@ Two configurations are provided, `Build` and `Run`.
 
 `Build`:
 ```powershell
-. .run\run.ps1
+. run.ps1
 ```
 
 `Run`:
 ```powershell
 $env:RUN=1
-. .run\run.ps1
+. run.ps1
 ```
